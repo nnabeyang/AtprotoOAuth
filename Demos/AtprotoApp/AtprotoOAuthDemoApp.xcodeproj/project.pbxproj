@@ -127,7 +127,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				32E0A3832F87E5A900962644 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				01E50C462F483FF800C0D8E0 /* AtprotoOAuthDemoApp */,
@@ -298,10 +297,6 @@
 			isa = PBXTargetDependency;
 			target = 01E50C432F483FF800C0D8E0 /* AtprotoOAuthDemoApp */;
 			targetProxy = 01E50C5C2F483FF800C0D8E0 /* PBXContainerItemProxy */;
-		};
-		32E0A3832F87E5A900962644 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = 32E0A3822F87E5A900962644 /* ATProtoGenerator */;
 		};
 /* End PBXTargetDependency section */
 
@@ -725,11 +720,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 32E0A37C2F87E51500962644 /* XCRemoteSwiftPackageReference "Microcosm" */;
 			productName = Microcosm;
-		};
-		32E0A3822F87E5A900962644 /* ATProtoGenerator */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 32E0A3812F87E59B00962644 /* XCRemoteSwiftPackageReference "swift-atproto" */;
-			productName = "plugin:ATProtoGenerator";
 		};
 		9092014D2F64DBCA00BABF6A /* AtprotoOAuth */ = {
 			isa = XCSwiftPackageProductDependency;
