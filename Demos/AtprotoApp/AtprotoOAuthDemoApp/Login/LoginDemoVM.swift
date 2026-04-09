@@ -68,9 +68,9 @@ import SwiftUI
 
 				//make an auth request
 				let profileMetadata =
-					try await oauthAgent.authBskyProfileViewerState(
-						for: resolvedDid
-					)
+				try await oauthAgent.ActorGetProfile(
+					actor: resolvedDid.stringRepresentation
+				).viewer.tryUnwrap
 
 				debugPrint(profileMetadata)
 				appendLog("Fetched profile metadata: \(profileMetadata)")

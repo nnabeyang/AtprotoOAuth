@@ -220,16 +220,16 @@ struct UnauthenticatedView: View {
 			}
 
 			// Follows
-			print("Loading follows...")
-			do {
-				let stream = try await agent.getFollowsStream()
-				follows = []
-				for try await batch in stream {
-					follows += batch
-				}
-			} catch {
-				print("Error loading follows: \(error)")
-			}
+			// print("Loading follows...")
+			// do {
+			//	let stream = try await agent.getFollowsStream()
+			//	follows = []
+			//	for try await batch in stream {
+			//		follows += batch
+			//	}
+			// } catch {
+			//	print("Error loading follows: \(error)")
+			// }
 		}
 
 		processing = newTask
@@ -248,7 +248,7 @@ struct UnauthenticatedView: View {
 		.resolveMiniDoc(identifier: did.stringRepresentation)
 		.tryUnwrap
 		.pds
-
+		
 		return PublicPDSAgent(did: did, serviceUrl: pdsUrl)
 	}
 }

@@ -5,6 +5,7 @@
 //  Created by Mark @ Germ on 2/28/26.
 //
 
+import SwiftAtproto
 import AtprotoClient
 import AtprotoTypes
 import Foundation
@@ -206,13 +207,13 @@ extension AtprotoOAuthAgent {
 	}
 }
 
-extension AtprotoOAuthAgent: AuthPDSAgent {
+extension AtprotoOAuthAgent: SwiftAtproto.OAuthClientProtocol {
 	public nonisolated var did: AtprotoTypes.Atproto.DID {
 		repo
 	}
 
 	public func response(
-		_ requestComponents: XRPCRequestComponents
+		_ requestComponents: SwiftAtproto.XRPCRequestComponents
 	) async throws -> HTTPDataResponse {
 		let pdsUrl = try await getPDSUrl()
 

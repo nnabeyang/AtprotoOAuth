@@ -17,6 +17,7 @@ import os
 
 //has a storage that my
 
+@MainActor
 @Observable final class SessionVM {
 	static let logger = Logger(
 		subsystem: "com.germnetwork.AtprotoOAuthDemoApp",
@@ -192,8 +193,8 @@ import os
 		guard let authedClient else {
 			return
 		}
-		let otherDid = try await resolver.resolve(handle: otherHandle)
-		let metadata = try await authedClient.authBskyProfileViewerState(for: otherDid)
+		let otherDid = try await resolver.resolve(handle: otherHandle)		
+		let metadata = try await authedClient.ActorGetProfile(actor: otherDid.stringRepresentation).viewer.tryUnwrap
 		blocking = metadata.blocking != nil
 		blocked = metadata.blockedBy
 		following = metadata.following != nil

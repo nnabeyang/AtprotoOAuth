@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct AtprotoOAuthDemoAppApp: App {
+struct AtprotoOAuthDemoAppApp: SwiftUI.App {
 	var body: some Scene {
 		WindowGroup {
 			ContentView()

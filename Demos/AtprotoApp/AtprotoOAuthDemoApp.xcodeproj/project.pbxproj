@@ -7,13 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01268A9A2F49795700058D68 /* Microcosm in Frameworks */ = {isa = PBXBuildFile; productRef = 01268A992F49795700058D68 /* Microcosm */; };
-		016FA9882F4930760061B936 /* Microcosm in Frameworks */ = {isa = PBXBuildFile; productRef = 016FA9872F4930760061B936 /* Microcosm */; };
-		01E7F7142F7A58E3007AF235 /* Microcosm in Frameworks */ = {isa = PBXBuildFile; productRef = 01E7F7132F7A58E3007AF235 /* Microcosm */; };
 		2C83CAF22F72FD9E00168B01 /* AtprotoOAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2C83CAF12F72FD9E00168B01 /* AtprotoOAuth */; };
 		2C83CDD32F72FECB00168B01 /* ATResolve in Frameworks */ = {isa = PBXBuildFile; productRef = 2C83CDD22F72FECB00168B01 /* ATResolve */; };
+		32864E502F87A77D00ECE362 /* AtprotoOAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 32864E4F2F87A77D00ECE362 /* AtprotoOAuth */; };
+		32E0A37E2F87E51500962644 /* Microcosm in Frameworks */ = {isa = PBXBuildFile; productRef = 32E0A37D2F87E51500962644 /* Microcosm */; };
 		9092014E2F64DBCA00BABF6A /* AtprotoOAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 9092014D2F64DBCA00BABF6A /* AtprotoOAuth */; };
-		909201512F64DBD900BABF6A /* Microcosm in Frameworks */ = {isa = PBXBuildFile; productRef = 909201502F64DBD900BABF6A /* Microcosm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,13 +60,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01E7F7142F7A58E3007AF235 /* Microcosm in Frameworks */,
 				2C83CDD32F72FECB00168B01 /* ATResolve in Frameworks */,
-				01268A9A2F49795700058D68 /* Microcosm in Frameworks */,
-				909201512F64DBD900BABF6A /* Microcosm in Frameworks */,
+				32E0A37E2F87E51500962644 /* Microcosm in Frameworks */,
 				2C83CAF22F72FD9E00168B01 /* AtprotoOAuth in Frameworks */,
 				9092014E2F64DBCA00BABF6A /* AtprotoOAuth in Frameworks */,
-				016FA9882F4930760061B936 /* Microcosm in Frameworks */,
+				32864E502F87A77D00ECE362 /* AtprotoOAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,19 +127,18 @@
 			buildRules = (
 			);
 			dependencies = (
+				32E0A3832F87E5A900962644 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				01E50C462F483FF800C0D8E0 /* AtprotoOAuthDemoApp */,
 			);
 			name = AtprotoOAuthDemoApp;
 			packageProductDependencies = (
-				016FA9872F4930760061B936 /* Microcosm */,
-				01268A992F49795700058D68 /* Microcosm */,
 				9092014D2F64DBCA00BABF6A /* AtprotoOAuth */,
-				909201502F64DBD900BABF6A /* Microcosm */,
 				2C83CAF12F72FD9E00168B01 /* AtprotoOAuth */,
 				2C83CDD22F72FECB00168B01 /* ATResolve */,
-				01E7F7132F7A58E3007AF235 /* Microcosm */,
+				32864E4F2F87A77D00ECE362 /* AtprotoOAuth */,
+				32E0A37D2F87E51500962644 /* Microcosm */,
 			);
 			productName = AtprotoOAuthDemoApp;
 			productReference = 01E50C442F483FF800C0D8E0 /* AtprotoOAuthDemoApp.app */;
@@ -228,9 +223,10 @@
 			mainGroup = 01E50C3B2F483FF800C0D8E0;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				2C83CAF02F72FD9E00168B01 /* XCLocalSwiftPackageReference "../../../AtprotoOAuth" */,
 				2C83CDD12F72FECB00168B01 /* XCRemoteSwiftPackageReference "ATResolve" */,
-				01E7F7122F7A58E3007AF235 /* XCRemoteSwiftPackageReference "Microcosm" */,
+				32864E4E2F87A77D00ECE362 /* XCLocalSwiftPackageReference "../../../AtprotoOAuth" */,
+				32E0A37C2F87E51500962644 /* XCRemoteSwiftPackageReference "Microcosm" */,
+				32E0A3812F87E59B00962644 /* XCRemoteSwiftPackageReference "swift-atproto" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 01E50C452F483FF800C0D8E0 /* Products */;
@@ -302,6 +298,10 @@
 			isa = PBXTargetDependency;
 			target = 01E50C432F483FF800C0D8E0 /* AtprotoOAuthDemoApp */;
 			targetProxy = 01E50C5C2F483FF800C0D8E0 /* PBXContainerItemProxy */;
+		};
+		32E0A3832F87E5A900962644 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 32E0A3822F87E5A900962644 /* ATProtoGenerator */;
 		};
 /* End PBXTargetDependency section */
 
@@ -466,8 +466,8 @@
 				SDKROOT = auto;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_APPROACHABLE_CONCURRENCY = NO;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = nonisolated;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
@@ -520,8 +520,8 @@
 				SDKROOT = auto;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_APPROACHABLE_CONCURRENCY = NO;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = nonisolated;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
@@ -674,21 +674,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		2C83CAF02F72FD9E00168B01 /* XCLocalSwiftPackageReference "../../../AtprotoOAuth" */ = {
+		32864E4E2F87A77D00ECE362 /* XCLocalSwiftPackageReference "../../../AtprotoOAuth" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../../../AtprotoOAuth;
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		01E7F7122F7A58E3007AF235 /* XCRemoteSwiftPackageReference "Microcosm" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/germ-network/Microcosm.git";
-			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 0.1.0;
-			};
-		};
 		2C83CDD12F72FECB00168B01 /* XCRemoteSwiftPackageReference "ATResolve" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/germ-network/ATResolve";
@@ -697,22 +689,25 @@
 				minimumVersion = 1.1.1;
 			};
 		};
+		32E0A37C2F87E51500962644 /* XCRemoteSwiftPackageReference "Microcosm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nnabeyang/Microcosm";
+			requirement = {
+				kind = revision;
+				revision = ac32c4c1f9b33a745595c04a5d60b1ca5ddd325f;
+			};
+		};
+		32E0A3812F87E59B00962644 /* XCRemoteSwiftPackageReference "swift-atproto" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nnabeyang/swift-atproto";
+			requirement = {
+				kind = revision;
+				revision = 8be6bcc5b31a57b3732b63642a59101cbe8912c8;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		01268A992F49795700058D68 /* Microcosm */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Microcosm;
-		};
-		016FA9872F4930760061B936 /* Microcosm */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Microcosm;
-		};
-		01E7F7132F7A58E3007AF235 /* Microcosm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 01E7F7122F7A58E3007AF235 /* XCRemoteSwiftPackageReference "Microcosm" */;
-			productName = Microcosm;
-		};
 		2C83CAF12F72FD9E00168B01 /* AtprotoOAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = AtprotoOAuth;
@@ -722,13 +717,23 @@
 			package = 2C83CDD12F72FECB00168B01 /* XCRemoteSwiftPackageReference "ATResolve" */;
 			productName = ATResolve;
 		};
-		9092014D2F64DBCA00BABF6A /* AtprotoOAuth */ = {
+		32864E4F2F87A77D00ECE362 /* AtprotoOAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = AtprotoOAuth;
 		};
-		909201502F64DBD900BABF6A /* Microcosm */ = {
+		32E0A37D2F87E51500962644 /* Microcosm */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = 32E0A37C2F87E51500962644 /* XCRemoteSwiftPackageReference "Microcosm" */;
 			productName = Microcosm;
+		};
+		32E0A3822F87E5A900962644 /* ATProtoGenerator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 32E0A3812F87E59B00962644 /* XCRemoteSwiftPackageReference "swift-atproto" */;
+			productName = "plugin:ATProtoGenerator";
+		};
+		9092014D2F64DBCA00BABF6A /* AtprotoOAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AtprotoOAuth;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

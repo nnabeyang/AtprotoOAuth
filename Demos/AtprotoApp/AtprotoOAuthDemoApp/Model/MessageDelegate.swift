@@ -21,6 +21,6 @@ extension AtprotoOAuthAgent {
 	public func postGermMessagingDelegate(
 		_ delegate: Lexicon.Com.GermNetwork.Declaration
 	) async throws {
-		let _ = try await putRecord(delegate)
+		// let _ = try await putRecord(delegate)
 	}
 }
