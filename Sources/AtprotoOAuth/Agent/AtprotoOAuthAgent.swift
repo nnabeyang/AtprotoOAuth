@@ -11,6 +11,7 @@ import Foundation
 import GermConvenience
 import HTTPTypes
 import OAuth4Swift
+import SwiftAtproto
 
 public actor AtprotoOAuthAgent {
 	public nonisolated let repo: Atproto.DID
@@ -188,13 +189,13 @@ extension AtprotoOAuthAgent {
 	}
 }
 
-extension AtprotoOAuthAgent: AuthPDSAgent {
+extension AtprotoOAuthAgent: XRPCCallable {
 	public nonisolated var did: AtprotoTypes.Atproto.DID {
 		repo
 	}
 
 	public func response(
-		_ requestComponents: XRPCRequestComponents
+		_ requestComponents: SwiftAtproto.XRPCRequestComponents
 	) async throws -> HTTPDataResponse {
 		let pdsUrl = try await getPDSUrl()
 

@@ -198,8 +198,8 @@ import os
 		let otherDid = try await resolver.resolve(
 			handle: .init(string: otherHandle)
 		).tryUnwrap
-		let metadata = try await authedClient.authBskyProfile(
-			for: otherDid
+		let metadata = try? await authedClient.ActorGetProfile(
+			actor: otherDid.rawValue
 		).viewer
 
 		if let metadata {
@@ -243,8 +243,12 @@ import os
 					try await resolver
 					.resolve(handle: .init(string: otherHandle))
 					.tryUnwrap
-				let _ = try await authedClient.createRecord(
-					Lexicon.App.Bsky.Graph.Block.init(subject: otherDid)
+				let _ = try await authedClient.RepoCreateRecord(
+					input: .init(collection: AtprotoOAuth.App.Bsky.GraphBlock.nsId,
+						  record: .record(AtprotoOAuth.App.Bsky.GraphBlock(
+							createdAt: Date().iso8601withFractionalSeconds,
+							subject: otherDid.rawValue)),
+								 repo: authedClient.did.rawValue)
 				)
 				blockResult = "Blocked @\(otherHandle)!"
 			} catch {
@@ -265,20 +269,13 @@ import os
 		}
 
 		do {
-			return try await authedClient.postGermMessagingDelegate(
+			try await authedClient.postGermMessagingDelegate(
 				.init(
-					version: "1.1.0",
+					continuityProofs: nil,
 					currentKey: Data("mock".utf8).base64EncodedData(),
 					keyPackage: Data("mock".utf8).base64EncodedData(),
-					messageMe: showButtonTo == .none
-						? nil
-						: .init(
-							showButtonTo:
-								.usersIFollow,
-							messageMeUrl:
-								"germnetwork.com"
-						),
-					continuityProofs: nil
+					messageMe: showButtonTo == .none ? nil : .init(messageMeUrl: "germnetwork.com", showButtonTo: .usersifollow),
+					version: "1.1.0"
 				)
 			)
 		} catch {

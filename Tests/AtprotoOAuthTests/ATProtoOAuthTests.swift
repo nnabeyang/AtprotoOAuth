@@ -56,7 +56,7 @@ enum AuthHarness {
 }
 
 struct ClientAPITests {
-	let oauthClient: Atproto.XRPC.ProxyCallable
+	let oauthClient: XRPCCallable
 	static let genericScopes = ["atproto", "transition:generic"]
 	let resolver = SlingshotResolver(
 		slingshot: .init(resourceFetcher: URLSession.shared)
