@@ -10,6 +10,7 @@ import AtprotoTypes
 import Foundation
 import GermConvenience
 import OAuth4Swift
+import SwiftAtproto
 
 import struct HTTPTypes.HTTPFields
 
@@ -189,13 +190,17 @@ extension AtprotoOAuthAgent {
 	}
 }
 
-extension AtprotoOAuthAgent: AuthPDSAgent {
+extension AtprotoOAuthAgent: XRPCCallable {
+	public nonisolated func getProxy(nsid: String) -> String? {
+		"did:web:api.bsky.app#bsky_appview"
+	}
+	
 	public nonisolated var did: AtprotoTypes.Atproto.DID {
 		repo
 	}
 
 	public func response(
-		_ requestComponents: XRPCRequestComponents
+		_ requestComponents: SwiftAtproto.XRPCRequestComponents
 	) async throws -> HTTPDataResponse {
 		let pdsUrl = try await getPDSUrl()
 

@@ -81,7 +81,7 @@ struct LogEntry: Identifiable {
 				//make an auth request
 				let authProfile =
 					try await oauthAgent
-					.authBskyProfile(for: resolvedDid)
+					.ActorGetProfile(actor: resolvedDid.rawValue).viewer.tryUnwrap
 
 				debugPrint(authProfile)
 				appendLog("Fetched auth profile metadata: \(authProfile)")

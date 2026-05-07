@@ -93,3 +93,24 @@ public struct AtprotoOAuthUtils {
 		return (pdsAuthMetadata, pdsServiceEndpoint)
 	}
 }
+
+extension Date {
+  public var iso8601withFractionalSeconds: String {
+	Formatter.iso8601withFractionalSeconds.string(from: self)
+  }
+}
+
+extension Formatter {
+  public static var iso8601withFractionalSeconds: ISO8601DateFormatter {
+	ISO8601DateFormatter([
+	  .withInternetDateTime, .withFractionalSeconds,
+	])
+  }
+}
+
+extension ISO8601DateFormatter {
+  convenience init(_ formatOptions: Options) {
+	self.init()
+	self.formatOptions = formatOptions
+  }
+}

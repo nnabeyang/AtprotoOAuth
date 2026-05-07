@@ -19,8 +19,12 @@ extension PublicPDSAgent {
 
 extension AtprotoOAuthAgent {
 	public func postGermMessagingDelegate(
-		_ delegate: Lexicon.Com.GermNetwork.Declaration
+		_ delegate: Com.Germnetwork.Declaration
 	) async throws {
-		let _ = try await putRecord(delegate)
+		let _ = try? await self.RepoPutRecord(input: .init(
+			collection: "",
+			record: .record(delegate),
+			repo: "",
+			rkey: ""))
 	}
 }

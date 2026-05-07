@@ -5,7 +5,7 @@ import PackageDescription
 
 let package = Package(
 	name: "AtprotoOAuth",
-	platforms: [.iOS(.v16), .macOS(.v15)],
+	platforms: [.iOS(.v17), .macOS(.v15)],
 	products: [
 		// Products define the executables and libraries a package produces, making them visible to other packages.
 		.library(
@@ -41,6 +41,10 @@ let package = Package(
 			url: "https://github.com/apple/swift-crypto.git",
 			.upToNextMajor(from: "4.2.0")),
 		.package(url: "https://github.com/apple/swift-http-types.git", from: "1.5.1"),
+		.package(
+			url: "https://github.com/nnabeyang/swift-atproto.git",
+			revision: "d506982fa4a396b2dc13b5aaa8ba8d64ff64180a"
+		),
 	],
 	targets: [
 		// Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -54,6 +58,7 @@ let package = Package(
 				.product(name: "Crypto", package: "swift-crypto"),
 				.product(name: "HTTPTypes", package: "swift-http-types"),
 				.product(name: "OAuth4Swift", package: "oauth4swift"),
+				.product(name: "SwiftAtproto", package: "swift-atproto"),
 			]
 		),
 		.target(
